@@ -1,0 +1,15 @@
+{
+  "name": "friendlychat",
+  "version": "1.0.0",
+  "description": "A chat app for friends",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Tang Newyen",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^2.3.0"
+  }
+}
