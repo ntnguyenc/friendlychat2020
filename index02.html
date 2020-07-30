@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FriendlyChat</title>
+    <link type='text/css' href='./public/css/main.css'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+    <style>
+        body {margin: 0; padding: 0; background-color: #afafaf;}
+        h1 {text-align: center;}
+        .outter-box{width: 90vw; height:80vh; margin: auto; border-radius: 5px; background-color: rgba(47, 3, 65, 0.664);}
+        .chatbox{padding: 20px; color: #664499; background: #FFF; height: 80%; width:90wv;}
+        .text-window{position: relative; bottom: 0px; background:#FFF;}
+    </style>
+</head>
+<body>
+    <h1 class='h3 mb-3 font-weight-bold'>FriendlyChat</h1>
+
+       <!-- The Modal -->
+       <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <h1 class="modal-title">What's your nickname?</h1>
+            <input id="nickname-input" class="custom-input" type="text" />
+        </div>
+
+    </div>
+    
+        <!--Big wrapper-->
+        <div class="big-wrapper">
+            <!-- Left Column-->
+            <div class="online-user-wrapper">
+                <div class="online-user-header-container">
+                    <header>
+                        <h5>Online Users</h5>
+                    </header>
+                </div>
+                <div>
+                    <!--Online users goes here-->
+                    <ul id="users-list">
+    
+                    </ul>
+                </div>
+            </div>
+        </div>
+    
+    <div class='outter-box'>
+        <div id='chat-window' class='chatbox'>
+            <div id='output'></div>
+            <div id='typing'></div>
+        </div>
+
+        <div class='container text-window'>
+            <input type="text" id="handle" class="form-control" placeholder="name" required autofocus>
+            <input type="text" id="message" class="form-control" placeholder="enter a message">
+            <button id='button' class='btn btn-lg btn-primary btn-block' type='submit'>Send</button>
+        </div>
+    </div>
+
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="./socket.io/socket.io.js"></script>
+    <script src='./public/js/client.js'></script>
+    <script src="./public/js/chat.js"></script>
+    <script src="./public/js/modalScript.js"></script>
+</body>
+</html>

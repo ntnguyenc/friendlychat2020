@@ -6,26 +6,67 @@
     <title>FriendlyChat</title>
     <link type='text/css' href='./public/css/main.css'>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/b12d87f59e.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
     <style>
-        body {margin: 0; padding: 0;}
-        h1 {text-align: center;}
-        .chatbox{padding: 20px; margin-top: 100px; color: #664499; width:640px;}
+        body {margin: 0; padding: 0; background-color: #afafaf;}
+        h1 {text-align: center; color: #fff;}
+        .outter-box{width: 90vw; height:100vh; margin: auto; margin-top: 10px; border-radius: 5px; background: rgba(47, 3, 65, 0.514);}
+		.left-window{float:left; background: #fff; height: 75%; width:78%; margin: 5px; border: #000 1px solid;}
+        .chatbox{padding: 20px; color: #664499;}
+        .online-users{float: right; width: 20%; height: 75%; background: #fff; margin: 5px; padding-left: 5px; border: 1px #000 solid;}
+        .clear-break{clear: both;}
+		.toolbar{height: 30px; width: 95%; margin: 10px auto 10px auto;}
+        .text-window{width: 95%; height: 15%;}
+        .space{margin-left: 10px;}
+        span{font-size: 36px; line-height: 0.5px;}
+        @media only screen and (max-width: 1200px) {
+            .left-window{float:left; background: #fff; height: 75%; width:77%; margin: 5px; border: #000 1px solid;}}
     </style>
 </head>
 <body>
-    <h1 class='h3 mb-3 font-weight-bold'>FriendlyChat</h1>
-    <div class='container'>
-        <input type="text" id="handle" class="form-control" placeholder="name" required autofocus>
-        <input type="text" id="message" class="form-control" placeholder="enter a message">
-        <button id='button' class='btn btn-lg btn-primary btn-block' type='submit'>Send</button>
-    </div>
 
-    <div id='chat-window' class='chatbox'>
-        <div id='output'></div>
-        <div id='typing'></div>
-    </div>
+    <div class='outter-box'>
+            <h1 class='h3 mb-3 font-weight-bold'>FriendlyChat</h1>
 
-    <script src="./socket.io/socket.io.js"></script>
+			<div class='left-window'>
+				<div id='chat-window' class='chatbox'>
+					<div id='output'></div>
+					<div id='typing'></div>
+				</div>
+			</div>
+
+			<div class='online-users'>
+				<p><strong>Online Users:</strong></p>
+                <ul id="users-list"></ul>
+            </div>
+
+			<div class='clear-break'></div>
+				<div class='toolbar'>
+                    <i class="space fas fa-bold fa-2x"></i>
+                    <i class="space fas fa-italic fa-2x"></i>
+                    <i class="space fas fa-underline fa-2x"></i>
+                    <i class="space fas fa-strikethrough fa-2x"></i>
+                    <span> | </span>
+                    <i class="space fas fa-smile fa-2x"></i>
+                    <i class="space fas fa-camera fa-2x"></i>
+				</div>
+
+                <div class='container text-window'>
+                    <div style='margin-top: 5px;'></div>
+                    <input type="text" id="handle" class="form-control" placeholder="name" required autofocus>
+                    <input type="text" id="message" class="form-control" placeholder="enter a message">
+                    <button id='button' class='btn btn-lg btn-primary btn-block' type='submit'>Send</button>
+                </div>
+
+                <footer>
+                    Tang Newyen Studios, Copyright &copy; 2020
+                </footer>
+        </div>
+
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script src='./public/js/client.js'></script>
+    <script src="./public/js/chat.js"></script>
+    <script src="./public/js/modalScript.js"></script>
 </body>
 </html>
