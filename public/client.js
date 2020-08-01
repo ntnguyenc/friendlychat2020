@@ -3,10 +3,10 @@ const socket = io(serverLocation); //location of where server is hosting socket 
 
 // query DOM
 const message = document.getElementById('message');
-      handle = document.getElementById('handle');
-      button =  document.getElementById('button');
-      output = document.getElementById('output');
-      typing = document.getElementById('typing');
+const handle = document.getElementById('handle');
+const button =  document.getElementById('button');
+const output = document.getElementById('output');
+const typing = document.getElementById('typing');
 
 //Sending 'typing...' message
 message.addEventListener('keypress', () => {
@@ -25,9 +25,31 @@ button.addEventListener('click', () => {
 // Listen to events
 socket.on('userMessage', (data) => {
     typing.innerHTML = "";
-    output.innerHTML += '<p> <strong>' + data.handle + ': </strong>' + data.message + '</p>'
+
+    // Create a <strong> with the username/data.handle inside
+    let usernameElement = document.createElement('strong')
+    usernameElement.appendChild(document.createTextNode(data.handle))
+
+    // Create a <p> with text inside
+    let textElement = document.createElement('p')
+    textElement.appendChild(document.createTextNode(data.message))
+
+    // Div holding the other two
+    let message = document.createElement('div')
+    message.appendChild(usernameElement)
+    message.appendChild(textElement)
+    
+    /* Message element looks like this:
+        <div>
+            <strong>data.handle</strong>
+            <p>data.message</p>
+        </div>
+    */
+
+    output.appendChild(message)
 })
 
 socket.on('userTyping', (data) => {
-    typing.innerHTML = '<p><strong>' + data + ' is typing...</strong></p>'
+    // Changed HTML to already be <strong>
+    typing.innerText = `${data} is typing...`
 })
