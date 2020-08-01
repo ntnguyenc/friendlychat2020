@@ -1,5 +1,5 @@
 serverLocation = self.location.href
-const socket = io('serverLocaiton'); //location of where server is hosting socket app
+const socket = io(serverLocation); //location of where server is hosting socket app
 
 // query DOM
 const message = document.getElementById('message');
@@ -24,10 +24,25 @@ button.addEventListener('click', () => {
 
 // Listen to events
 socket.on('userMessage', (data) => {
+    //Clear typing status
     typing.innerHTML = "";
-    output.innerHTML += '<p> <strong>' + data.handle + ': </strong>' + data.message + '</p>'
+
+    //Create <strong> with the username/data.handle inside
+    let usernameElement = document.createElement('strong')
+    usernameElement.appendChild(document.createTextNode(data.handle))
+
+    //Create <p> with text inside
+    let textElement = document.createElement('p')
+    textElement.appendChild(document.createTextNode(data.massage))
+
+    //DIV holding the username and message
+    let message = document.createElement('div')
+    message.appendChild(usernameElement)
+    message.appendChild(textElement)
+
+    output.appendChild(message)
 })
 
 socket.on('userTyping', (data) => {
-    typing.innerHTML = '<p><strong>' + data + ' is typing...</strong></p>'
+    typing.innerHTML = '$(data) is typing...'
 })

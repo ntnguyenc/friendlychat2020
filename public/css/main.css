@@ -1,5 +1,75 @@
 body {
-  background-color: red;
+  margin: 0;
+  padding: 0;
+  background-color: #1d1d1d;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  text-align: center;
   color: #fff;
 }
 
+.outter-box{
+  width: 90vw;
+  height:100vh;
+  margin: auto;
+  margin-top: 10px;
+  border-radius: 5px;
+  background: rgba(47, 3, 65, 0.514);
+}
+
+.left-window{
+  float:left;
+  background: #fff;
+  height: 75%;
+  width:78%;
+  margin: 5px;
+  border: #000 1px solid;
+}
+
+.chatbox{
+  padding: 20px;
+  color: #664499;}
+
+.online-users{
+  float: right;
+  width: 20%;
+  height: 75%;
+  background: rgba(0,0,0,0.5);
+  margin: 5px;
+  padding: 5px;
+  border: 1px #000 solid;
+}
+
+.clear-break{
+  clear: both;
+}
+
+.toolbar{
+  height: 30px;
+  width: 95%;
+  margin: 5px;
+}
+
+.text-window{
+  width: 95%;
+  height: 15%;
+}
+
+.space{
+  margin-left: 10px;
+}
+
+span{
+  font-size: 24px;
+  line-height: 0.5px;
+}
+
+footer {
+  font-size: 0.8em;
+}
+
+@media only screen and (max-width: 900px) {
+    .left-window{float:left; background: #fff; height: 75%; width:77%; margin: 5px; border: #000 1px solid;}}
+    .online-users{float: right; width: 15%; height: 75%; background: rgba(0,0,0,0.5); margin: 5px; padding: 5px; border: 1px #000 solid;}
