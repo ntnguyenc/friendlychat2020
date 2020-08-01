@@ -44,6 +44,6 @@ socket.on('userMessage', (data) => {
 })
 
 socket.on('userTyping', (data) => {
-    console.log(data) //testing value in data
-    typing.innerHTML = '$(data) is typing...'
+    console.log(data.handle) //testing value in data
+    typing.innerHTML = '$(data.handle) is typing...'
 })
