@@ -36,14 +36,14 @@ socket.on('userMessage', (data) => {
     textElement.appendChild(document.createTextNode(data.message))
 
     //DIV holding the username and message
-    let message = document.createElement('div')
-    message.appendChild(usernameElement)
-    message.appendChild(textElement)
+    let messages = document.createElement('div')
+    messages.appendChild(usernameElement)
+    messages.appendChild(textElement)
 
-    output.appendChild(message)
+    output.appendChild(messages)
 })
 
 socket.on('userTyping', (data) => {
-    console.log(data.handle) //testing value in data
-    typing.innerHTML = '$(data.handle) is typing...'
+    console.log(data) //testing value in data
+    typing.innerHTML = '$(data) is typing...'
 })
