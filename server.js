@@ -15,21 +15,21 @@ app.get('/', (req, res) => {
 server = http.createServer(app)
 
 const port = process.env.PORT || 3000;
-server.listen(port, function(){
+server.listen(port, () => {
   console.log('listening on *:' + port);
 });
 
 io = socketIO(server)
 
-io.on('connection', function(socket){
+io.on('connection', (socket) => {
   console.log('client is connected ' + socket.id)
 
   socket.on('userMessage', (data) => {
-      io.sockets.emit('userMessage', data)
+    io.sockets.emit('userMessage', data)
   });
 
   socket.on('userTyping', (data) => {
-      socket.broadcast.emit('userTyping', data)
+    socket.broadcast.emit('userTyping', data)
   })
 
-});
+}); 
