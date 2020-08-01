@@ -33,7 +33,7 @@ socket.on('userMessage', (data) => {
 
     //Create <p> with text inside
     let textElement = document.createElement('p')
-    textElement.appendChild(document.createTextNode(data.massage))
+    textElement.appendChild(document.createTextNode(data.message))
 
     //DIV holding the username and message
     let message = document.createElement('div')
