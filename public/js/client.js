@@ -44,5 +44,6 @@ socket.on('userMessage', (data) => {
 })
 
 socket.on('userTyping', (data) => {
-    typing.innerText = '$(data) is typing...'
+    const userName = data.handle;
+    typing.innerText = '$(userName) is typing...'
 })
