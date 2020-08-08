@@ -2,10 +2,10 @@ serverLocation = self.location.href
 const socket = io(serverLocation); //location of where server is hosting socket app
 
 // query DOM
-const message = document.getElementById('message');
-      handle = document.getElementById('handle');
-      button =  document.getElementById('button');
-      output = document.getElementById('output');
+const message = document.getElementById('message'),
+      handle = document.getElementById('handle'),
+      button =  document.getElementById('button'),
+      output = document.getElementById('output'),
       typing = document.getElementById('typing');
 
 //Sending 'typing...' message
@@ -20,6 +20,7 @@ button.addEventListener('click', () => {
         handle: handle.value
     })
     document.getElementById('message').value = "";
+    
 })
 
 // Listen to events

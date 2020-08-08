@@ -1,24 +1,36 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #1d1d1d;
+  background-color: #dddddd;
   font-family: Arial, Helvetica, sans-serif;
-}
+  padding: 85px 0 50px 0;
 
+}
+header {
+  width: 100%;
+  height: 75px;
+  background-color: #664499;
+  margin-bottom: 100px;
+}
+footer{
+  width: 100%;
+  height: 20px;
+  background-color: #535b63;
+  font-size: 0.8em;
+  color: #fff;
+}
 h1 {
   text-align: center;
   color: #fff;
 }
-
 .outter-box{
   width: 90vw;
-  height:100vh;
-  margin: auto;
-  margin-top: 10px;
+  height: 85vh;
+  margin: 0 auto;
+  padding: 10px 10px 10px 0;
   border-radius: 5px;
   background: rgba(47, 3, 65, 0.514);
 }
-
 .left-window{
   float:left;
   background: #fff;
@@ -28,11 +40,9 @@ h1 {
   border: #000 1px solid;
   overflow: auto;
 }
-
 .chatbox{
   padding: 20px;
   color: #664499;}
-
 .online-users{
   float: right;
   width: 20%;
@@ -42,33 +52,24 @@ h1 {
   padding: 5px;
   border: 1px #000 solid;
 }
-
 .clear-break{
   clear: both;
 }
-
 .toolbar{
   height: 30px;
   width: 95%;
   margin: 5px;
 }
-
 .text-window{
   width: 95%;
   height: 15%;
 }
-
 .space{
   margin-left: 10px;
 }
-
 span{
   font-size: 24px;
   line-height: 0.5px;
-}
-
-footer {
-  font-size: 0.8em;
 }
 
 @media only screen and (max-width: 900px) {
